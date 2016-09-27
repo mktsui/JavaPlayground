@@ -22,15 +22,15 @@ public class BinarySearch {
 	}
 
 	public static void main(String[] args) {
-		int [] whitelist = {1,2,3,4,5,6,7,8,9};
-		
+		int [] whitelist = {1,2,3,4};
+		System.out.println("Input a integer to check if it is in the list");
 		// Arrays.sort(whitelist);
 		while (true)
 		{
 			Scanner in = new Scanner(System.in);
 			int key = in.nextInt();
-			if (rank(key, whitelist)<0) {
-				System.out.println(String.valueOf(key));
+			if (rank(key, whitelist)>=0) {
+				System.out.println(String.valueOf(key)+" is found!");
 			}
 			else{
 				System.out.println("Try again");
