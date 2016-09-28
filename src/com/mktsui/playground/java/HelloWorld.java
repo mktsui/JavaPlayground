@@ -1,20 +1,24 @@
 package com.mktsui.playground.java;
 
-import java.util.Scanner;
+import java.util.*;
+
 
 public class HelloWorld {
 
-	public static void main(String[] args) throws java.io.IOException {
-		// TODO Auto-generated method stub
-		int a;
-		float b;
-		String s;
- 
-		Scanner in = new Scanner(System.in);
+	public static int[] revSort(int[] ary){
+		try {
 
-		System.out.println("Say something!");
-		s=in.nextLine();
-		System.out.println("Hello World again!");
+			for (int i=0;i<ary.length+1;i++)
+				ary[i] = ary.length-i;	
+		} catch (IndexOutOfBoundsException e) {
+		    System.err.println("IndexOutOfBoundsException: " + e.getMessage());
+		}
+		return ary;
+	}
+	
+	public static void main(String[] args) {
+		int[] ay= new int[10];
+		System.out.println(Arrays.toString(revSort(ay)));
 	}
 
 }
