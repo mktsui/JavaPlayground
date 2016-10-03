@@ -1,5 +1,6 @@
 package com.mktsui.playground.java;
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BinarySearch {
@@ -25,16 +26,19 @@ public class BinarySearch {
 		int [] whitelist = {1,2,3,4,5,6,7,8,9};
 		
 		// Arrays.sort(whitelist);
-		while (true)
-		{
-			Scanner in = new Scanner(System.in);
-			int key = in.nextInt();
-			if (rank(key, whitelist)<0) {
-				System.out.println(String.valueOf(key));
+		do {
+			try {
+				Scanner in = new Scanner(System.in);
+				int key = in.nextInt();
+				if (rank(key, whitelist)>=0) {
+					System.out.println(String.valueOf(key)+" found!");
+				}
+				else{
+					System.out.println("Try again");
+				}
+			} catch (InputMismatchException e) {
+				System.out.println("Integer only");
 			}
-			else{
-				System.out.println("Try again");
-			}
-		}
+		} while (true);
 	}
 }
