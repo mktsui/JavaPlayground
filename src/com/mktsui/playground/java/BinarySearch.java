@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class BinarySearch {
+	// O(log n)
 
 	public static int rank(int key, int[] a) {
 		// TODO Auto-generated method stub

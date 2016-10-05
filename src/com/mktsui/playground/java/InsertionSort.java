@@ -3,6 +3,7 @@ package com.mktsui.playground.java;
 import java.util.Arrays;
 
 public class InsertionSort {
+	// average O(n^2), worst O(n^2)
 
 	public static int [] insertSort(int[] unsortList) {
 		int position = 0;
