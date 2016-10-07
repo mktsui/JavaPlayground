@@ -21,6 +21,7 @@ public class BubbleSort {
 				}
 			}
 			
+			// rest of list is sorted
 			if (!swapped)
 				break;
 		}
