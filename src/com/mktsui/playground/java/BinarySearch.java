@@ -24,8 +24,8 @@ public class BinarySearch {
 	}
 
 	public static void main(String[] args) {
-		int [] whitelist = {1,2,3,4,5,6,7,8,9};
-		
+		int [] whitelist = {1,2,3,4};
+		System.out.println("Input a integer to check if it is in the list");
 		// Arrays.sort(whitelist);
 		do {
 			try {
