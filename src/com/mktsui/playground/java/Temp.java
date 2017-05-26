@@ -7,39 +7,36 @@ public class Temp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-        HashMap<Integer, Character> hm = new HashMap<Integer, Character>();
-        char c;
-        int i, count;
-        
-        for (i = 1, c = 'a'; i < 27; i++){
-        	hm.put(i, c++);
-        }
-        
-        count = 0;
-        
-        
+        String digits = "122124";
+
+        System.out.println(new Temp().baseCase(digits));
 	}
 	
-	private int baseCase(ArrayList<Character> digits){
-		if (digits.size() == 0)
+	private int baseCase(String digits){
+		if (digits.length() == 0)
 			return 0;
-		else if (digits.size() == 1)
+		else if (digits.length() == 1)
 			return 1;
-		else if (digits.size() == 2)
-			return ((getDigitInt(digits) > 26) ? 1 : 2);
-		else {
-			// TO-DO
-			return 0;
+		else if (digits.length() == 2){
+			String a = ""+digits.charAt(0)+digits.charAt(1);
+			return (isCharacter(a) ? 2 : 1);
 		}
-		
+		else {
+			int a, b = 0;
+			String c = ""+digits.charAt(0)+digits.charAt(1);
+			a = baseCase(digits.substring(1, digits.length()));
+			if (isCharacter(c))
+				b = baseCase(digits.substring(2, digits.length()));
+			return a + b;
+		}
 	}
 	
-	public int getDigitInt(ArrayList<Character> digits){
-		StringBuilder sBuilder = new StringBuilder(digits.size());
-		for (Character eachChar:digits){
-			sBuilder.append(eachChar);
+	public static boolean isCharacter(String s) {
+		if (0 < Integer.parseInt(s) && Integer.parseInt(s) < 27) {
+			return true;
+		} else {
+			return false;
 		}
-		return Integer.parseInt(sBuilder.toString());
 	}
 
 }
